@@ -38,6 +38,8 @@ paths:
             properties:
               name:
                 type: string
+              address:
+                type: string
               password:
                 type: string    
       description: |
@@ -47,5 +49,83 @@ paths:
           description: Successful
           schema:
             type: string
+    get:
+      tags:
+        - Register
+      operationId: GetRegistee   
+      description: |
+        Register User      
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: string
+  '/register/{id}':
+    get:
+      tags:
+        - Register
+      operationId: GetRegisteredUserById
+      parameters:
+        - $ref: '#/parameters/id'    
+      description: |
+        Get Registered User      
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: object
+    put:
+      tags:
+        - Register
+      operationId: UpdateRegisteredUserById
+      parameters:
+        - $ref: '#/parameters/id'
+        - name: user
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              address:
+                type: string
+              password:
+                type: string 
+      description: |
+        Update Registered User      
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: object
+    delete:
+      tags:
+        - Register
+      operationId: DeleteRegisteredUserById
+      parameters:
+        - $ref: '#/parameters/id'
+        - name: user
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              address:
+                type: string
+              password:
+                type: string 
+      description: |
+        DeleteRegisteredUserById      
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: object
 
-
+parameters:
+  id:
+    in: path
+    name: id
+    required: true 
+    type: string

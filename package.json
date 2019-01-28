@@ -1,5 +1,5 @@
 {
-  "name": "saturday",
+  "name": "swagger",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "pg-async": "^3.1.0",
     "swagger-ui-express": "^4.0.2",
     "swagger2": "^1.0.4"
   },

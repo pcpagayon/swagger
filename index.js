@@ -3,6 +3,8 @@ import swaggerui from 'swagger-ui-express'
 import bodyParser from 'body-parser'
 import * as swagger from 'swagger2'
 
+import { postgresMiddleware } from './postgres'
+
 import { routes as registerRoute } from './routes/register.js'
 
 
@@ -29,6 +31,8 @@ router.get('/swagger.json', (req, res) => {         //<---
     res.send(spec)
 })
 
+
+app.use(postgresMiddleware())
 app.use('/v1', router)       //<-- 'v1' is the basePath
 
 app.listen(5000, () => {
