@@ -1,0 +1,51 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Node Swagger Exampol
+  license:
+    name: Proprietary
+basePath: /v1
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+paths:
+  '/swagger.json':
+    get:
+      tags:
+        - spec
+      operationId: getSwaggerSpec
+      description: |
+        Get Swagger Spec
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: string
+  '/register':
+    post:
+      tags:
+        - Register
+      operationId: Register
+      parameters:
+        - name: user
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              password:
+                type: string    
+      description: |
+        Register User
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: string
+
+
