@@ -52,7 +52,7 @@ paths:
     get:
       tags:
         - Register
-      operationId: GetRegistee   
+      operationId: GetRegister   
       description: |
         Register User      
       responses:

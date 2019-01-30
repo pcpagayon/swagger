@@ -25,8 +25,8 @@ export function routes(router){
         })
         .delete('/register/id',async(req, res) => {
             const {name, password, address} = req.body
-            const id = await retrieve(postgres(req), name, password, address, req.params.id)
-            res.send(id)
+            const id = await drop(postgres(req), name, password, address, req.params.id)
+            res.send(id) // add status code and message not name etc.
         })
 
 
