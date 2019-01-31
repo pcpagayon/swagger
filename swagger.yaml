@@ -16,7 +16,7 @@ paths:
   '/swagger.json':
     get:
       tags:
-        - spec
+        - Spec
       operationId: getSwaggerSpec
       description: |
         Get Swagger Spec
@@ -54,12 +54,12 @@ paths:
         - Register
       operationId: GetRegister   
       description: |
-        Register User      
+        Get Registered User      
       responses:
         '200':
           description: Successful
           schema:
-            type: string
+            type: object
   '/register/{id}':
     get:
       tags:
@@ -104,17 +104,6 @@ paths:
       operationId: DeleteRegisteredUserById
       parameters:
         - $ref: '#/parameters/id'
-        - name: user
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-              address:
-                type: string
-              password:
-                type: string 
       description: |
         DeleteRegisteredUserById      
       responses:
